@@ -4,14 +4,15 @@
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card">
+                <!-- Image -->
                 <div class="card-image">
                     <img src="http://www.nonsprecare.it.cdn.adresponse.it/wp-content/uploads/2015/03/ecco-quando-il-cibo-scaduto-si-puo-mangiare-1.jpg" height="400px">
                     <span class="card-title">Registration</span>
                 </div>
-                <div class="card-content">
+                <form class="card-content" method="POST" action="{{ url_for('register') }}">
                     <!-- Username --> 
                     <div class="row">
-                        <div class="input-field col s12" method="POST" action="{{ url_for('register') }}">
+                        <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
                             <input id="username" name="username" type="text" class="validate">
                             <label for="username">Username</label>
@@ -27,11 +28,11 @@
                     </div>
                     <!-- Register -->
                     <div class="row">
-                        <button type="submit" class="col s12 btn-large indigo lighten-1">
-                        Register <i class="material-icons right">send</i>
+                        <button class="col s12 btn-large waves-effect indigo lighten-1" type="submit" name="action">
+                        Submit<i class="material-icons right">send</i>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div >
     </div>
