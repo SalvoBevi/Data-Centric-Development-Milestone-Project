@@ -10,3 +10,7 @@ nav .brand-logo {
 .sidenav li>a{
     color: white;
 }
+
+.flashes li {
+    line-height: 2;
+}

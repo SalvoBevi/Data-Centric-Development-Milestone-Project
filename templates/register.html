@@ -14,7 +14,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="username" name="username" type="text" class="validate">
+                            <input id="username" name="username" type="text" minlength="3"
+                            maxlength="13" pattern="^[a-zA-Z0-9]{3,13}$" class="validate" required>
                             <label for="username">Username</label>
                         </div>
                     </div>
@@ -22,7 +23,8 @@
                     <div class="row">
                         <div class="input-field col s12 ">
                             <i class="material-icons prefix">vpn_key</i>
-                            <input id="password" name="password" type="password" class="validate">
+                            <input id="password" name="password" type="password" minlength="3"
+                            maxlength="13" pattern="^[a-zA-Z0-9]{3,13}$" class="validate" required>
                             <label for="password">Password</label>
                         </div>
                     </div>
