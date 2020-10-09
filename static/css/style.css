@@ -11,6 +11,8 @@ nav .brand-logo {
     color: white;
 }
 
-.flashes li {
+.flashes h5 {
     line-height: 2;
+    background-color: #ffd54f;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
