@@ -19,10 +19,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_skills")
-def get_skills():
-    skills = mongo.db.skills.find()
-    return render_template("skills.html", skills=skills)
+@app.route("/search")
+def search():
+    search = mongo.db.search.find()
+    return render_template("search.html", search=search)
 
 
 @app.route("/register", methods=["GET", "POST"])
