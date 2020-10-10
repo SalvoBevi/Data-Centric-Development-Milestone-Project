@@ -21,8 +21,8 @@
 				<ul class="right hide-on-med-and-down">
 					<li><a href="{{ url_for('home') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('recipe') }}">Recipes</a></li>
                         <li><a href="{{ url_for('get_skills') }}">Search</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
@@ -38,8 +38,8 @@
             <li><h4 class="center-align amber-text text-accent-3">Zallo Giafferano</h4></li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('recipe') }}">Recipes</a></li>
                 <li><a href="{{ url_for('get_skills') }}">Search</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}

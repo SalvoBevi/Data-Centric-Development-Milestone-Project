@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h3 class="center-align light-blue-text text-darken 4">
+                    Add Recipe
+                </h3>
+                <div class="row">
+                    <form class="col s12" method="GET" action="">
+                        <!-- GET the dish from the database -->
+                        <div class="input-field validate" required>
+                            <select>
+                            <option value="dish_name" disabled selected>Choose your Dish</option>
+                            <option value="1">Starter</option>
+                            <option value="2">Main Course</option>
+                            <option value="3">Dessert</option>
+                            </select>
+                        </div>
+                        <!-- GET the ingredients from the database -->
+                        <div class="input-field validate" required>
+                            <select multiple>
+                            <option value="" disabled selected>Choose the Ingredients:</option>
+                            <option value="1">Pasta</option>
+                            <option value="2">Courgettes</option>
+                            <option value="3">Prawns</option>
+                            <option value="4">Pasta</option>
+                            <option value="5">Courgettes</option>
+                            <option value="6">Prawns</option>
+                            <option value="7">Pasta</option>
+                            <option value="8">Courgettes</option>
+                            <option value="9">Lattuga</option>
+                            <option value="10">Pasta</option>
+                            <option value="11">Courgettes</option>
+                            <option value="12">Prawns</option>
+                            <option value="13">Pasta</option>
+                            <option value="14">Courgettes</option>
+                            <option value="15">Prawns</option>
+                            </select>
+                        </div>
+                    </form>
+                    <form class="col s12" method="POST" action="">
+                        <!-- POST the name of the dish to the database -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="dish_name" name="dish_name" minlength="5" maxlength="50"
+                                    type="text" class="validate" required>
+                                <label for="dish_name">Dish Name</label>
+                            </div>
+                        </div>
+                        <!-- POST the preparation of the dish to the database -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="preparation" name="preparation" minlength="5"
+                                    maxlength="1000" class="materialize-textarea validate" required></textarea>
+                                <label for="preparation">Preparation</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div >
+    </div>
+
+    
+
+{% endblock %}

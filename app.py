@@ -30,9 +30,9 @@ def get_skills():
     return render_template("skills.html", skills=skills)
 
 
-@app.route("/recipe")
-def recipe():
-    return render_template("recipe.html")
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
