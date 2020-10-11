@@ -10,33 +10,23 @@
                 <div class="row">
                     <form class="col s12" method="GET" action="">
                         <!-- GET the dish from the database -->
-                        <div class="input-field validate" required>
-                            <select>
-                            <option value="dish_name" disabled selected>Choose your Dish</option>
-                            <option value="1">Starter</option>
-                            <option value="2">Main Course</option>
-                            <option value="3">Dessert</option>
+                        <div class="input-field">
+                            <select id="dish_name" name="dish_name" class="validate" required>
+                            <option value="" disabled selected>Choose your Dish</option>
+                            {% for dish in dish %}
+                                <option value="{{ dish.dish_name }}">{{ dish.dish_name }}</option>
+                            {% endfor %}
                             </select>
                         </div>
                         <!-- GET the ingredients from the database -->
                         <div class="input-field validate" required>
-                            <select multiple>
-                            <option value="" disabled selected>Choose the Ingredients:</option>
-                            <option value="1">Pasta</option>
-                            <option value="2">Courgettes</option>
-                            <option value="3">Prawns</option>
-                            <option value="4">Pasta</option>
-                            <option value="5">Courgettes</option>
-                            <option value="6">Prawns</option>
-                            <option value="7">Pasta</option>
-                            <option value="8">Courgettes</option>
-                            <option value="9">Lattuga</option>
-                            <option value="10">Pasta</option>
-                            <option value="11">Courgettes</option>
-                            <option value="12">Prawns</option>
-                            <option value="13">Pasta</option>
-                            <option value="14">Courgettes</option>
-                            <option value="15">Prawns</option>
+                            <select multiple id="ingredients" name="ingredients" class="validate" required>
+                            <option value="" disabled selected>Choose the Ingredients</option>
+                            {% for ingredients in ingredients %}
+                                <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                                <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                                <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                            {% endfor %}
                             </select>
                         </div>
                     </form>
@@ -44,16 +34,16 @@
                         <!-- POST the name of the dish to the database -->
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="dish_name" name="dish_name" minlength="5" maxlength="50"
+                                <input id="plate_name" name="plate_name" minlength="5" maxlength="50"
                                     type="text" class="validate" required>
-                                <label for="dish_name">Dish Name</label>
+                                <label for="plate_name">Plate Name</label>
                             </div>
                         </div>
                         <!-- POST the preparation of the dish to the database -->
                         <div class="row">
                             <div class="input-field col s12">
                                 <textarea id="preparation" name="preparation" minlength="5"
-                                    maxlength="1000" class="materialize-textarea validate" required></textarea>
+                                    maxlength="9999" class="materialize-textarea validate" required></textarea>
                                 <label for="preparation">Preparation</label>
                             </div>
                         </div>

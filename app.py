@@ -32,7 +32,14 @@ def get_skills():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    dish = mongo.db.dish.find().sort("dish_name", 1)
+    return render_template("add_recipe.html", dish=dish)
+
+
+@app.route("/ingredients")
+def ingredients():
+    ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
+    return render_template("add_recipe.html", ingredients=ingredients)
 
 
 @app.route("/register", methods=["GET", "POST"])
