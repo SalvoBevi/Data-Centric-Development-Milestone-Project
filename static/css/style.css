@@ -20,3 +20,12 @@ nav .brand-logo {
 .row {
     margin-bottom: 0;
 }
+
+.card {
+    float: left;
+    position: relative;
+}
+
+.card-content{
+    text-align: center;
+    }
