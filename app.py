@@ -33,9 +33,9 @@ def add_recipe():
             "ingredients": request.form.getlist("ingredients"),
             "plate_name": request.form.get("plate_name"),
             "preparation": request.form.get("preparation"),
-            "created_by": sessio["user"]
+            "created_by": session["user"]
         }
-        mongo.db.recipe.insert.one(recipe)
+        mongo.db.recipe.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("recipe"))
 
