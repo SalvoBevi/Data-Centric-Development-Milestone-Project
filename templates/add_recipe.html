@@ -8,7 +8,7 @@
                     Add Recipe
                 </h3>
                 <div class="row">
-                    <form class="col s12" method="GET" action="">
+                    <form class="col s12" method="GET" action="{{ url_for('add_recipe') }}">
                         <!-- GET the dish from the database -->
                         <div class="input-field">
                             <select id="dish_name" name="dish_name" class="validate" required>
@@ -29,6 +29,12 @@
                         </div>
                     </form>
                     <form class="col s12" method="POST" action="">
+                        <!-- POST a new ingredients to the database -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>New Infredients? Add it</p>
+                            </div>
+                        </div>                  
                         <!-- POST the name of the dish to the database -->
                         <div class="row">
                             <div class="input-field col s12">
@@ -43,6 +49,14 @@
                                 <textarea id="preparation" name="preparation" minlength="5"
                                     maxlength="9999" class="materialize-textarea validate" required></textarea>
                                 <label for="preparation">Preparation</label>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <button class="col s12 btn-large waves-effect indigo lighten-1" type="submit">
+                                    Add Recipe<i class="material-icons right">send</i>
+                                </button>
                             </div>
                         </div>
                     </form>

@@ -19,18 +19,13 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/home")
-def home():
-    return render_template("home.html")
+@app.route("/recipe")
+def recipe():
+    recipe = mongo.db.reicpe.find()
+    return render_template("recipe.html", recipe=recipe)
 
 
-@app.route("/get_skills")
-def get_skills():
-    skills = mongo.db.skills.find()
-    return render_template("skills.html", skills=skills)
-
-
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     dish = mongo.db.dish.find().sort("dish_name", 1)
     ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
