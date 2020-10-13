@@ -5,6 +5,7 @@
 nav .brand-logo {
     padding-left: 15px;
     color: #ffc400;
+    position: relative;
 }
 
 .sidenav li>a{
