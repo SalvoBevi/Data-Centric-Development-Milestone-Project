@@ -45,6 +45,15 @@ def add_recipe():
         "add_recipe.html", ingredients=ingredients, dish=dish)
 
 
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    dish = mongo.db.dish.find().sort("dish_name", 1)
+    ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, ingredients=ingredients, dish=dish)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
