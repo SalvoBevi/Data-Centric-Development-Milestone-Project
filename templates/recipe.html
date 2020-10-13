@@ -32,9 +32,18 @@
                             </div>
                             <div class="card-content">
                                 <p>{{ recipe.ingredients }}</p>
+                                <p><em>by: {{ recipe.created_by }}</em></p>
                             </div>
                             <div class="card-action">
                                 <a href="#">This is a link</a>
+                            </div>
+                            <div class="row">
+                                <div class="col sm3">
+                                    <a href="" class="waves-effect blue btn-small asd">
+                                        <i class="material-icons right">edit</i>Edit</a>
+                                    <a href="" class="waves-effect red btn-small asd">
+                                        <i class="material-icons right">cancel</i>Cancel</a>
+                                </div>
                             </div>
                         </div>
                     </div>
