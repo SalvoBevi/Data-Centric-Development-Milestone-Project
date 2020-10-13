@@ -12,18 +12,26 @@
                         <!-- choose a dish -->
                         <div class="input-field">
                             <select id="dish_name" name="dish_name" class="validate" required>
-                            <option value="" disabled selected>Choose your Dish</option>
+                            <option value="" disabled>Choose your Dish</option>
                             {% for dish in dish %}
-                                <option value="{{ dish.dish_name }}">{{ dish.dish_name }}</option>
+                                {% if dish.dish_name == recipe.dish_name %}
+                                    <option value="{{ dish.dish_name }}" selected>{{ dish.dish_name }}</option>
+                                {% else %}
+                                    <option value="{{ dish.dish_name }}">{{ dish.dish_name }}</option>
+                                {% endif %}
                             {% endfor %}
                             </select>
                         </div>
                         <!-- choose the ingredients -->
                         <div class="input-field validate" required>
                             <select multiple id="ingredients" name="ingredients" class="validate" required>
-                            <option value="" disabled selected>Choose the Ingredients</option>
+                            <option value="" disabled>Choose the Ingredients</option>
                             {% for ingredients in ingredients %}
-                                <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                                {% if ingredients.ingredients == recipe.ingredients %}
+                                    <option value="{{ ingredients.ingredients }}" selected>{{ ingredients.ingredients }}</option>
+                                {% else %}
+                                    <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                                {% endif %}
                             {% endfor %}
                             </select>
                         </div>
@@ -38,7 +46,7 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">stars</i>
                                 <input id="plate_name" name="plate_name" minlength="5" maxlength="50"
-                                    type="text" class="validate" required>
+                                    value="{{ recipe.plate_name }}" type="text" class="validate" required>
                                 <label for="plate_name">Plate Name</label>
                             </div>
                         </div>
@@ -47,14 +55,19 @@
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">local_dining</i>
                                 <textarea id="preparation" name="preparation" minlength="5"
-                                    maxlength="9999" class="materialize-textarea validate" required></textarea>
+                                    maxlength="9999" class="materialize-textarea validate" required>
+                                    {{- recipe.preparation -}}
+                                </textarea>
                                 <label for="preparation">Preparation</label>
                             </div>
                         </div>
                         <!-- submit button -->
                         <div class="row">
                             <div class="col s12 center-align">
-                                <button class="col s12 btn-large waves-effect indigo lighten-1" type="submit">
+                                <a href="{{ url_for('recipe') }}" class="btn-large waves-effect red">
+                                Cancel<i class="material-icons right">cancel</i>
+                                </a>
+                                <button class="btn-large waves-effect indigo lighten-1" type="submit">
                                     Edit Recipe<i class="material-icons right">edit</i>
                                 </button>
                             </div>
