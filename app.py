@@ -39,7 +39,7 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("recipe"))
 
-    dish = mongo.db.dish.find().sort("dish_name", 1)
+    dish = mongo.db.dish.find().sort("dish", 1)
     ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
     return render_template(
         "add_recipe.html", ingredients=ingredients, dish=dish)
@@ -60,7 +60,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for("recipe"))
 
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    dish = mongo.db.dish.find().sort("dish_name", 1)
+    dish = mongo.db.dish.find().sort("dish", 1)
     ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
     return render_template(
         "edit_recipe.html", recipe=recipe, ingredients=ingredients, dish=dish)
@@ -71,6 +71,20 @@ def delete_recipe(recipe_id):
     mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipe"))
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    recipe = list(mongo.db.recipe.find().sort("recipe_name", 1))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template(
+            "profile.html", username=username, profile=recipe)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -125,19 +139,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
-
 
 @app.route("/logout")
 def logout():
