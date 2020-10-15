@@ -66,6 +66,13 @@ def edit_recipe(recipe_id):
         "edit_recipe.html", recipe=recipe, ingredients=ingredients, dish=dish)
 
 
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("recipe"))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
