@@ -1,15 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="row">
-        <div class="col s12 m8 offset-m2">
-            <div class="card-panel">
-                <h3 class="center-align light-blue-text text-darken 4">
-                    All Recipes
-                </h3>                    
-            </div>
-        </div >
-    </div>
+    <h3 class="light-blue-text text-darken-4 center-align">All Recipes</h3>
 
     <div>
         <form action="{{ url_for('search') }}" method="post" class="col12 m8 offset-m2">
