@@ -11,6 +11,24 @@
         </div >
     </div>
 
+    <div>
+        <form action="{{ url_for('search') }}" method="post" class="col12 m8 offset-m2">
+            <div class="row center-align">
+                <div class="input-field col s12 m8">
+                    <i class="material-icons prefix">folder_open</i>
+                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                    <label for="query">Search Recipe</label>
+                </div>
+                <div class="col s12 m4">
+                    <a href="{{ url_for('recipe') }}" class="red btn text-shadow">Reset</a>
+                    <button type="submit" class="light-blue darken-1 btn text-shadow">
+                        <i class="material-icons right">search</i> Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     {% for recipe in recipe %}
         {{ recipe.dish_name }}<br>
         {{ recipe.ingredients }}<br>
@@ -18,7 +36,7 @@
         {{ recipe.preparation }}<br>
     {% endfor %}
 
-    
+    {% if recipe|length > 0 %}
     <div class="container-fluid">
         <div class="row">
             {% for recipe in recipe %}
@@ -42,6 +60,8 @@
             {% endfor %}
         </div>
     </div>
-    
+    {% else %}
+        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+    {% endif %}    
 
  {% endblock %}
