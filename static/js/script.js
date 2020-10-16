@@ -5,7 +5,7 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('select').formSelect();
-
+    $('#successMessage').fadeOut().delay(500);
     
 
     validateMaterializeSelect();
