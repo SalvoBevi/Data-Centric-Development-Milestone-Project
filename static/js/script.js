@@ -5,7 +5,9 @@
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: "right"});
     $('select').formSelect();
-    $('#fMessage').fadeOut().delay(1000);
+    setTimeout( function(){ 
+        $('#fMessage').hide(); }, 3000);
+    $('.modal').modal();
     
 
     validateMaterializeSelect();

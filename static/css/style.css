@@ -8,6 +8,10 @@ nav .brand-logo {
     position: relative;
 }
 
+.nav-h {
+    height: 70px;
+}
+
 .sidenav li>a{
     color: white;
 }
@@ -30,3 +34,7 @@ nav .brand-logo {
 .card-content{
     text-align: center;
     }
+
+.card-content-h{
+    height: 120px;
+}

@@ -21,12 +21,12 @@
         </form>
     </div>
 
-    {% for recipe in recipe %}
+    <!-- {% for recipe in recipe %}
         {{ recipe.dish_name }}<br>
         {{ recipe.ingredients }}<br>
         {{ recipe.plate_name }}<br>
         {{ recipe.preparation }}<br>
-    {% endfor %}
+    {% endfor %} -->
 
     {% if recipe|length > 0 %}
     <div class="container-fluid">
@@ -40,7 +40,7 @@
                                 <strong>{{ recipe.plate_name }}</strong>
                                 </span>
                         </div>
-                        <div class="card-content">
+                        <div class="card-content card-content-h">
                             <p>{{ recipe.ingredients }}</p>
                             <p><em>by: {{ recipe.created_by }}</em></p>
                         </div>
