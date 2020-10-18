@@ -34,15 +34,6 @@ def search():
     return render_template("recipe.html", recipe=recipe)
 
 
-@app.route("/modal")
-def modal():
-    plate_name = mongo.db.plate_name.find()
-    ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
-    preparation = mongo.db.preparation.find()
-    return redirect (
-        "modal", plate_name=plate_name, ingredients=ingredients, preparation=preparation)
-
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
