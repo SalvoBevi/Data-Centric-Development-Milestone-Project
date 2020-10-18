@@ -7,7 +7,6 @@ $(document).ready(function(){
     $('select').formSelect();
     setTimeout( function(){ 
         $('#fMessage').hide(); }, 3000);
-    $('.modal').modal();
     
 
     validateMaterializeSelect();

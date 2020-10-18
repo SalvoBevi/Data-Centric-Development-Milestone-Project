@@ -9,7 +9,7 @@
                 <div class="input-field col s12 m8">
                     <i class="material-icons prefix">folder_open</i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Recipe</label>
+                    <label for="query">Search for the Name or by the Ingredients</label>
                 </div>
                 <div class="col s12 m4">
                     <a href="{{ url_for('recipe') }}" class="red btn text-shadow">Reset</a>
@@ -20,13 +20,7 @@
             </div>
         </form>
     </div>
-
-    <!-- {% for recipe in recipe %}
-        {{ recipe.dish_name }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.plate_name }}<br>
-        {{ recipe.preparation }}<br>
-    {% endfor %} -->
+    <br/>
 
     {% if recipe|length > 0 %}
     <div class="container-fluid">
@@ -35,17 +29,16 @@
                 <div class="col m4 sm6">
                     <div class="card">
                         <div class="card-image">
-                            <img src="https://yummycravingsmagazine.files.wordpress.com/2013/02/pasta-puttanesca.jpg">
-                                <span class="card-title">
-                                <strong>{{ recipe.plate_name }}</strong>
-                                </span>
+                            <img src="{{ recipe.image }}">
                         </div>
                         <div class="card-content card-content-h">
-                            <p>{{ recipe.ingredients }}</p>
+                            <p>
+                            <strong>{{ recipe.plate_name }}</strong>
+                            </p>
                             <p><em>by: {{ recipe.created_by }}</em></p>
                         </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
+                        <div class="card-action center-align">
+                            <a href="#" style="margin: 0">Read the Recipe</a>
                         </div>
                     </div>
                 </div>
@@ -54,6 +47,6 @@
     </div>
     {% else %}
         <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
-    {% endif %}    
+    {% endif %}
 
  {% endblock %}

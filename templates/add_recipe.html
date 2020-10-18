@@ -8,8 +8,8 @@
                     Add Recipe
                 </h3>
                 <div class="row">
-                    <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-                        <!-- choose a dish -->
+                    <form class="col s12" method="POST" enctype="multipart/form-data" action="{{ url_for('add_recipe') }}">
+                        <!-- choose a dish from db -->
                         <div class="input-field">
                             <select id="dish_name" name="dish_name" class="validate" required>
                             <option value="" disabled selected>Choose your Dish</option>
@@ -18,7 +18,7 @@
                             {% endfor %}
                             </select>
                         </div>
-                        <!-- choose the ingredients -->
+                        <!-- choose the ingredients from db -->
                         <div class="input-field validate" required>
                             <select multiple id="ingredients" name="ingredients" class="validate" required>
                             <option value="" disabled selected>Choose the Ingredients</option>
@@ -27,21 +27,21 @@
                             {% endfor %}
                             </select>
                         </div>
-                        <!-- new ingredients to add on the database -->
+                        <!-- add new ingredients on the db -->
                         <div class="row">
                             <div class="input-field col s12">
                                 <p>New Ingredient? Add it</p>
-                                    <div id="modal1" class="modal">
-                                        <div class="modal-content">
-                                        <h4>Modal Header</h4>
-                                        <p>A bunch of text</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                        </div>
-                                    </div>
                             </div>
-                        </div>                  
+                        </div>
+                        <!-- add image -->
+                        <div class = "row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">insert_link</i>
+                                <input id="image" name="image" minlength="5" maxlength="100"
+                                    type="text" class="validate" required>
+                                <label for="Image">Copy the URL image here</label>
+                            </div>
+                        </div>
                         <!-- name of the dish -->
                         <div class="row">
                             <div class="input-field col s12">

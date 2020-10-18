@@ -9,10 +9,10 @@
                 </h3>
                 <div class="row">
                     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-                        <!-- choose a dish -->
+                        <!-- edit a dish -->
                         <div class="input-field">
                             <select id="dish_name" name="dish_name" class="validate" required>
-                            <option value="" disabled>Choose your Dish</option>
+                            <option value="" disabled>Edit your Dish</option>
                             {% for dish in dish %}
                                 {% if dish.dish_name == recipe.dish_name %}
                                     <option value="{{ dish.dish_name }}" selected>{{ dish.dish_name }}</option>
@@ -22,10 +22,10 @@
                             {% endfor %}
                             </select>
                         </div>
-                        <!-- choose the ingredients -->
+                        <!-- edit the ingredients -->
                         <div class="input-field validate" required>
                             <select multiple id="ingredients" name="ingredients" class="validate" required>
-                            <option value="" disabled>Choose the Ingredients</option>
+                            <option value="" disabled>Edit the Ingredients</option>
                             {% for ingredients in ingredients %}
                                 {% if ingredients.ingredients == recipe.ingredients %}
                                     <option value="{{ ingredients.ingredients }}" selected>{{ ingredients.ingredients }}</option>
@@ -40,17 +40,26 @@
                             <div class="input-field col s12">
                                 <p>New Ingredient? Add it</p>
                             </div>
-                        </div>                  
-                        <!-- name of the dish -->
+                        </div>
+                        <!-- edit image -->
+                        <div class = "row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">insert_link</i>
+                                <input id="image" name="image" minlength="5" maxlength="100"
+                                    value="{{ recipe.image }}" type="text" class="validate" required>
+                                <label for="Image">Edit the URL image here</label>
+                            </div>
+                        </div>
+                        <!-- edit the name of the plate -->
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">stars</i>
                                 <input id="plate_name" name="plate_name" minlength="5" maxlength="50"
                                     value="{{ recipe.plate_name }}" type="text" class="validate" required>
-                                <label for="plate_name">Plate Name</label>
+                                <label for="plate_name">Edit the Plate Name</label>
                             </div>
                         </div>
-                        <!-- preparation of the dish -->
+                        <!-- edit the preparation of the plate -->
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">local_dining</i>
@@ -58,7 +67,7 @@
                                     maxlength="9999" class="materialize-textarea validate" required>
                                     {{- recipe.preparation -}}
                                 </textarea>
-                                <label for="preparation">Preparation</label>
+                                <label for="preparation">Edit the Preparation</label>
                             </div>
                         </div>
                         <!-- submit button -->

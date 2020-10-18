@@ -11,6 +11,7 @@ if os.path.exists("env.py"):
 
 app = Flask (__name__)
 
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -39,6 +40,7 @@ def add_recipe():
         recipe = {
             "dish_name": request.form.get("dish_name"),
             "ingredients": request.form.getlist("ingredients"),
+            "image": request.form.get("image"),
             "plate_name": request.form.get("plate_name"),
             "preparation": request.form.get("preparation"),
             "created_by": session["user"]
@@ -59,6 +61,7 @@ def edit_recipe(recipe_id):
         submit = {
             "dish_name": request.form.get("dish_name"),
             "ingredients": request.form.getlist("ingredients"),
+            "image": request.form.get("image"),
             "plate_name": request.form.get("plate_name"),
             "preparation": request.form.get("preparation"),
             "created_by": session["user"]
@@ -78,7 +81,7 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
-    return redirect(url_for("recipe"))
+    return redirect(url_for("profile"))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
