@@ -38,7 +38,17 @@
                             <p><em>by: {{ recipe.created_by }}</em></p>
                         </div>
                         <div class="card-action center-align">
-                            <a href="#" style="margin: 0">Read the Recipe</a>
+                            <a href="#modal1" class="modal-trigger" style="margin: 0">Read the Recipe</a>
+                        </div>
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>{{ recipe.plate_name }}</h4>
+                                <h6>Ingredients: {{ recipe.ingredients }}</h6>
+                                <p>{{ recipe.preparation }}</p>
+                            </div>
+                            <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                            </div>
                         </div>
                     </div>
                 </div>
