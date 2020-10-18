@@ -74,7 +74,7 @@ def edit_recipe(recipe_id):
     dish = mongo.db.dish.find().sort("dish", 1)
     ingredients = mongo.db.ingredients.find().sort("ingredients", 1)
     return render_template(
-        "recipe.html", recipe=recipe, ingredients=ingredients, dish=dish)
+        "edit_recipe.html", recipe=recipe, ingredients=ingredients, dish=dish)
 
 
 @app.route("/delete_recipe/<recipe_id>")
