@@ -106,9 +106,9 @@ For CSS validation testing I used ["W3 CSS Validator"](http://jigsaw.w3.org/css-
 
 ## Deployment
 
-This page has been deployed to ["Github Pages"]().
+This page has been deployed to ["Heroku Pages"](https://dashboard.heroku.com/apps/milestone-project-salvatore-b).
 
-GitHub is used to host the code and publish the pages.
+Heroku is used to host the code and publish the pages.
 
 After a final Git Add and Git commit
 
