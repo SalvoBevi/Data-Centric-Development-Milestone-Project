@@ -74,4 +74,53 @@ For this project I used:
 - [Google Images](https://www.google.com/imghp?hl=en)
     - I used **Google Images** to find the Images for my user`s review.
 
+## Testing
+
+To test this project I used various browsers and devices:
+
+#### Mobile Browsers
+* Chrome
+* Safari
+
+#### Desktop Browsers
+* Chrome
+
+#### Devices
+* ThinkPad X1 Carbon
+* Samsung S8
+* Huawei p20 pro
+* Iphone X
+
+During testing i used Chrome Developer tools to test the responsive design on different size and the features of the page on different width.
+
+The site was developed following the Bootstrap Grid System and the same was tested to ensure that all the elements are responsive on the following resolutions on each page:
+
+- Width ≥1200px
+- Width ≤ 600px
+
+### Validation Testings
+
+For HTML validation testing I used ["W3 Validator"](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgello94.github.io%2Ffirst-milestone-antonio%2F) which shows the html documents to be valid.
+
+For CSS validation testing I used ["W3 CSS Validator"](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgello94.github.io%2Ffirst-milestone-antonio%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=it) which shows the stylesheet to be valid CSS3.
+
+## Deployment
+
+This page has been deployed to ["Github Pages"]().
+
+GitHub is used to host the code and publish the pages.
+
+After a final Git Add and Git commit
+
+`$git add .`
+
+`$git commit -m "Final commit"`
+
+The pages were pushed to the GitHub repository
+
+`$ git push -u origin master`
+
+## Credits
+
+For this project I had ispiration by the Example Idea 1 Project of Code Institute's Data Centric Development Milestone Project.
 
