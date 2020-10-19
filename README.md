@@ -1,41 +1,26 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Data Centric Development Milestone Project
+# Zallo Giafferano
 
-Welcome SalvoBevi,
+This Website has been developed for Code Institute's Data Centric Development Milestone Project and represents a recipe site. Is a multi-page site with which the user can interact to add, modify and delete cooking recipes.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## UX
 
-## Gitpod Reminders
+This Project is to demonstrate lessons learned in this section Python Fundamentals and Data Centric Development.
+The idea of the project is inspired by the various sites born on the web.
+The realization was born to apply the notions learned in the Python fundamentals and Data Centric modules.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Scenario
 
-`python3 -m http.server`
+As mentioned above, I have created a basic website using, as much as I could, all the notions that I have received during this period. My aim is to continue building my website and develop, in particular, my projects page as that will be my business card for whoever would like to contact me and know more about my services and what I can, eventually, do for them.
 
-A blue button should appear to click: *Make Public*,
+## Features
 
-Another blue button should appear to click: *Open Browser*.
+The basic structure of the page is to allow the user a simple navigation.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* **Navbar**: composed by on the webpage logo on the left corner and at the opposite end the communication buttons for the navigation links to various pages.
 
-A blue button should appear to click: *Make Public*,
+* **Mobile Sidenav**: which shows the webpage logo at the top and under the communication buttons for the navigation links to various pages.
 
-Another blue button should appear to click: *Open Browser*.
+* **Section**: the body of the pages have been applied, where possible, the reuse of the codes according to the spirit of programming.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+* **CRUD**: 
