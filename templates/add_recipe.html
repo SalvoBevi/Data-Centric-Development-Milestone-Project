@@ -18,20 +18,14 @@
                             {% endfor %}
                             </select>
                         </div>
-                        <!-- choose the ingredients from db -->
+                        <!-- choose the ingredients -->
                         <div class="input-field validate" required>
                             <select multiple id="ingredients" name="ingredients" class="validate" required>
                             <option value="" disabled selected>Choose the Ingredients</option>
                             {% for ingredients in ingredients %}
-                                <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
+                                    <option value="{{ ingredients.ingredients }}">{{ ingredients.ingredients }}</option>
                             {% endfor %}
                             </select>
-                        </div>
-                        <!-- add new ingredients on the db -->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <p>New Ingredient? Add it</p>
-                            </div>
                         </div>
                         <!-- add image -->
                         <div class = "row">
